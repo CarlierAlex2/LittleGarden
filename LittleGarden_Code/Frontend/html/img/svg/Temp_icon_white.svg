@@ -1,0 +1,6 @@
+<svg id="Temp_icon_white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_134" data-name="Path 134" d="M0,0H24V24H0Z" fill="none"/>
+  <g id="thermometer" transform="translate(2 -3)">
+    <path id="Path_136" data-name="Path 136" d="M15,13V5A3,3,0,0,0,9,5v8a5,5,0,1,0,6,0M12,4a1,1,0,0,1,1,1V8H11V5A1,1,0,0,1,12,4Z" transform="translate(-2 3)" fill="#fff"/>
+  </g>
+</svg>

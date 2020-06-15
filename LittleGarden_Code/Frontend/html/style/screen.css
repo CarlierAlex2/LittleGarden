@@ -1,0 +1,1512 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    font-family: "kyrial-display-pro", "Helvetica Neue", Helvetica, arial, sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+
+    color: #17181A;
+    background-color: #DAE2E6;
+    /*background-color: #E6EEF2;*/
+
+    margin: 0 0 16px;
+}
+
+@media (min-width: 576px) {
+    html {
+        margin: 0 0 32px;
+    }
+}
+
+body{
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+
+::selection {
+    background: #e85e00;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1 {
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0 0 16px;
+}
+
+@media (min-width: 576px) {
+    h1 {
+        /*font-size: 32px;
+        line-height: 48px;*/
+    }
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+@media (min-width: 576px) {
+    h2 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 16px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 16px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 16px;
+}
+
+ul,
+ol {
+    padding-left: 16px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 16px;
+    font-family: "Times New Roman", serif;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-size: 12px;
+    line-height: 16px;
+    padding-top: 8px;
+    color: Grey;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 16px;
+}
+
+a {
+    color: #FFFFFF;
+    transition: all .1s ease-in-out;
+    text-decoration: none;
+
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 400;
+}
+
+a:visited,
+a:active {
+    color: #FFFFFF;
+}
+
+a:hover,
+a:focus {
+    color: #FFFFFF;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    padding: 16px 16px 0;
+    display: flow-root;
+}
+
+/* color modifiers */
+.o-row--dark {
+    background-color: #141618;
+    color: #949699;
+}
+
+.o-row--dark h2{
+    color: #FFFFFF;
+}
+
+.o-row--border-bottom-dark{
+    border-bottom: 1px solid rgba(13,20,26,0.1);
+}
+
+/* size modifiers */
+
+.o-row--intro {
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.o-row--lg {
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.o-row--xl {
+    padding-top: 72px;
+    padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .o-row--lg {
+        padding-top: 72px;
+        padding-bottom: 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .o-row--xl {
+        padding-top: 96px;
+        padding-bottom: 72px;
+    }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    display: flow-root;
+}
+
+.o-section + .o-section {
+    margin-top: 16px;
+}
+
+.o-section + .o-section-lg {
+    margin-top: 56px;
+}
+
+.o-section-lg + .o-section-lg {
+    margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+
+    }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.o-layout-column {
+    flex-direction: column;
+}
+
+.o-layout__item {
+    flex-basis: 100%;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -16px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 16px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -8px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 8px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 24px;
+}
+
+.o-layout--gutter-xl {
+    margin: 0 -40px;
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+    padding: 0 40px;
+}
+
+/* gutter modifiers for columns, these affect o-layout__item too */
+
+.o-layout--gutter-col-xs {
+    margin-top: -4px;
+    margin-bottom: -4px;
+}
+
+.o-layout--gutter-col-xs > .o-layout__item {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.o-layout--gutter-col-sm {
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+
+.o-layout--gutter-col-sm > .o-layout__item {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.o-layout--gutter-col {
+    margin-top: -16px;
+    margin-bottom: -16px;
+}
+
+.o-layout--gutter-col > .o-layout__item {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.o-layout--gutter-col-lg {
+    margin-top: -24px;
+    margin-bottom: -24px;
+}
+
+.o-layout--gutter-col-lg > .o-layout__item {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+.o-layout--align-self-start {
+    align-self: flex-start;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
+
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+
+/*
+    Object: Content
+    ---
+    Content related
+*/
+
+.o-content--relative{
+    position: relative;
+}
+
+.o-content--absolute-edge{
+
+}
+
+.o-content--absolute-edge-padding{
+    padding: 100% 0;
+}
+
+.o-content--flex-start{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.o-content--flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.o-content--flex-space-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.o-content--flex-space-evenly{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.o-content-padding {
+    padding: 8px 8px;
+}
+
+.o-content-padding-lg {
+    padding: 16px 16px;
+}
+
+@media (min-width: 576px) {
+    .o-content-padding-lg-bp1 {
+        padding: 16px 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .o-content-padding-xl-bp2 {
+        padding: 32px 32px;
+    }
+}
+
+.o-content-margin-lg {
+    margin: 16px 16px;
+}
+
+.o-content-no-padding-bottom {
+    padding-bottom: 0;
+}
+
+.o-content-block {
+    display: block;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Header
+    ---
+    Header components
+*/
+
+
+.c-header{
+    position: fixed;
+    z-index: 100;
+
+    background-color: #2C4023;
+    width: 100%;
+}
+
+.c-header__title {
+    line-height: 0;
+}
+
+.c-header + * {
+    padding-top: 5.25em;/*84 = 16 * 5.25‬*/
+}
+
+.c-header__context{
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-header__dropback{
+    width: 100%;
+    height: 12rem; /*192 = 12 * 16*/
+    position: absolute;
+    z-index: -1000;
+} 
+
+.c-header__nav-icon {
+    color: #FFFFFF;
+    margin-right: 2.5rem; /*40 = 2.5 * 16*/
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site on bigger screens
+*/
+
+.c-nav {
+
+}
+
+.c-nav__background {
+    width: 70%;
+    height: 100%;
+    background-color: #3C5931;
+    position: absolute;
+}
+
+.c-nav__item {
+    margin-bottom: 48px;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 24px;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #fff;
+}
+
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #DBEDFF;
+    text-shadow: 0 0 8px #8EC7FF;
+}
+
+.c-nav-button{
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/*
+    Component: Lead
+    ---
+*/
+
+.c-lead {
+    font-size: 18px;
+    font-weight: 600;
+    color: #EDFFE6;
+}
+
+@media (min-width: 576px) {
+    .c-lead {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/*
+    Component: Buttons
+    ---
+*/
+
+.c-button{
+    background-color: #4D733F;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border-width: 0;
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .05s ease-in-out;
+
+    -webkit-box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3);
+}
+
+.c-button-disabled{
+    background-color: #8A9499;
+    color: #DAE2E6;
+}
+
+
+.c-button:hover,
+.c-button:focus {
+    background-color: #278006;
+}
+
+.c-button__content{
+    padding-top: 8px;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+}
+
+.c-button__content-lg{
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+}
+
+.c-button__content-xl{
+    padding-top: 8px;
+    padding-right: 32px;
+    padding-bottom: 8px;
+    padding-left: 32px;
+}
+
+.c-button__element{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+/*
+    Component: Button slider
+    ---
+*/
+.c-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+  }
+  
+  .c-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .c-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #A4AEB3;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .c-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .c-checkbox:checked + .c-slider {
+    background-color: #278006;
+  }
+  
+  .c-checkbox:focus + .c-slider {
+    box-shadow: 0 0 1px #278006;
+  }
+  
+  .c-checkbox:checked + .c-slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+  }
+  
+  .c-slider--round {
+    border-radius: 34px;
+  }
+  
+  .c-slider--round:before {
+    border-radius: 50%;
+  } 
+
+/*
+    Component: Popups
+    ---
+*/
+.c-ppopup-off {
+    display: none;
+}
+
+.c-ppopup-on {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    position: fixed;
+    z-index: 1000;
+}
+
+.c-ppopup-on__content{
+    z-index: 1100;
+}
+
+.c-ppopup-on__background {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 24, 26, 0.5);
+    z-index: -1000;
+}
+
+/*
+    Component: Settings
+    ---
+*/
+.c-settings{
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1000;
+    max-width: 20.5em; /*328 = 20.5 * 16*/
+}
+
+.c-settings__content{
+    padding: 16px;
+}
+
+/*
+    Component: Icons
+    ---
+*/
+.c-icon {
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.c-icon--no-margin {
+    margin: 0;
+}
+
+.c-icon--margin {
+    margin-right: 16px;
+}
+
+.c-icon--expand {
+    width: 62.5%;
+    height: 62.5%;
+}
+
+.c-icon-xs {
+    width: 24px;
+    height: 24px;
+}
+
+.c-icon-sm {
+    width: 40px;
+    height: 40px;
+}
+
+.c-icon-lg {
+    width: 72px;
+    height: 72px;
+}
+
+.c-icon__symbol {
+    width: 100%;
+}
+
+.c-icon--background-round{
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+/*
+    Component: Status
+    ---
+*/
+.c-status {
+    font-size: 14px;
+}
+
+.c-status--off {
+    color: #686F73;
+}
+
+/*
+    Component: input
+    ---
+*/
+.c-measure__value{
+    text-align: right;
+    padding-right: 8px;
+}
+
+.c-input {
+    border: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    max-width: 100%;
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5em; /* 4 = 16 * 0.25‬*/
+
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+
+    box-sizing: border-box;
+} 
+
+.c-input-label {
+    margin-bottom: 8;
+    font-size: 16px;
+} 
+
+@media (min-width: 576px) {
+    .c-input {
+        font-size: 16px;
+        padding: 0.5em 1em; /* 4 = 16 * 0.25‬*/
+    } 
+}
+
+.c-input--no-padding-right {
+    padding-right: 0;
+} 
+
+.c-input__seperator {
+    margin: 0;
+} 
+
+.c-input__title {
+    display: inline-block;
+    font-weight: 600;
+} 
+
+/*
+    Component: Tabs
+    ---
+*/
+
+.c-tab__text{
+    padding: 16px 16px;
+    min-height: 80vh;
+}
+
+.c-tab__text p,a, h2 {
+    margin-bottom: 8px;
+}
+
+.c-tab__text p,a{
+    font-size: 16px;
+    font-weight: 600;
+    color: #686F73;
+}
+
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 48px !important;
+}
+
+.u-margin-negative-16 {
+    margin-bottom: -16px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 20.5em !important;  /*328 = 20.5‬ * 16*/
+}
+
+.u-max-width-sm {
+    max-width: 20.5em !important;  /*328 = 20.5‬ * 16*/
+}
+
+.u-max-width-md {
+    max-width: 42em !important; /*‭672‬ = ‭42‬ * 16*/
+}
+
+.u-max-width-lg {
+    max-width: 54.3em !important; /*‭868‬ = 54.25‬ * 16*/
+}
+
+.u-max-width-xl {
+    max-width: 75em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+@media (min-width: 768px) {
+    .u-max-width-md-bp2 {
+        max-width: 48em !important; /*‭672‬ = ‭42‬ * 16*/
+    }
+}
+
+@media (min-width: 992px) {
+    .u-max-width-md-bp3 {
+        max-width: 48em !important; /*‭672‬ = ‭42‬ * 16*/
+    }
+
+    .u-max-width-lg-bp3 {
+        max-width: 54.25‬em !important; /*‭868‬ = 54.25‬ * 16*/
+    }
+}
+
+.u-max-width-114px{
+    max-width: 114px !important;
+}
+
+.u-max-width-144px{
+    max-width: 144px !important;
+}
+
+.u-max-width-100{
+    max-width: 100% !important;
+}
+
+.u-max-width-90{
+    max-width: 90% !important;
+}
+
+.u-max-width-80{
+    max-width: 80% !important;
+}
+
+.u-width-100{
+    width: 100% !important;
+}
+
+@media (min-width: 576px) {
+    .u-max-width-176px-bp2{
+        max-width: 176px !important;
+    }
+}
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+    flex-basis: auto !important;
+}
+
+.u-flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+    flex-basis: calc(100% / 2) !important;
+}
+
+.u-1-of-3 {
+    flex-basis: calc(100% / 3) !important;
+}
+
+.u-2-of-3 {
+    flex-basis: calc(100% / 3 * 2) !important;
+}
+
+.u-1-of-4 {
+    flex-basis: calc(100% / 4) !important;
+}
+
+.u-3-of-4 {
+    flex-basis: calc(100% / 4 * 3) !important;
+}
+
+.u-1-of-5 {
+    flex-basis: calc(100% / 5) !important;
+}
+
+.u-2-of-5 {
+    flex-basis: calc(100% / 5 * 2) !important;
+}
+
+.u-3-of-5 {
+    flex-basis: calc(100% / 5 * 3) !important;
+}
+
+.u-4-of-5 {
+    flex-basis: calc(100% / 5 * 4) !important;
+}
+
+.u-1-of-6 {
+    flex-basis: calc(100% / 6) !important;
+}
+
+.u-5-of-6 {
+    flex-basis: calc(100% / 6 * 5) !important;
+}
+
+.u-1-of-8 {
+    flex-basis: calc(100% / 8) !important;
+}
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp1 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp1 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp1 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp1 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp1 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp1 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp1 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp2 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp2 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp2 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp2 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp2 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp2 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp2 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp3 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp3 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp3 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp3 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp3 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp3 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp3 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp4 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp4 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp4 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp4 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp4 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp4 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp4 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+/*
+    Utility: Text
+    ---
+    Utility classes for text
+*/
+.u-text--align-right {
+    text-align: right;
+}
+
+.u-text--align-left {
+    text-align: left;
+}
+
+.u-text--align-center {
+    text-align: center;
+}
+
+.u-fill-width {
+    display: block;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.u-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.u-text--color-grey {
+    color: #686F73;
+}
+
+.u-background-dark-green{
+    color: #2C4023;
+}
+
+
+/*
+    Utility: Decoration
+    ---
+    Utility classes to put decoration
+*/
+
+.u-no-decoration {
+    text-decoration: none;
+}
+
+.u-background-grey{
+    background-color: #DAE2E6;
+}
+
+.u-background-green{
+    background-color: #4D733F;
+}
+
+.u-background-light-green{
+    background-color: #80BF69;
+}
+
+.u-background-white{
+    background-color: #FFFFFF;
+}
+
+.u-rounded-sm{
+    border-radius: 10px;
+}
+
+.u-rounded-lg{
+    border-radius: 30px;
+}
+
+.u-box-shadow {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+}
+
+.u-box-shadow-lg {
+    -webkit-box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3);
+}
+
+.u-hide {
+    -webkit-display: none !important;
+    -moz-display: none !important;
+    -ms-display: none !important;
+    -o-display: none !important;
+    display: none !important;
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

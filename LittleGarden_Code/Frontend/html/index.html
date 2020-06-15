@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Little Garden - Home</title>
+
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/screen.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body>
+
+    <nav class="c-nav c-ppopup-off js-nav">
+      <div class="c-nav__background">
+        <div class="o-row c-ppopup-on__content">
+          <div class="o-container u-max-width-xl">
+            <ul class="o-list c-nav__list">
+              <li class="c-nav__item c-nav__back-btn js-nav-back">
+                <h1 class="c-icon c-icon-xs c-icon--no-margin">
+                  <svg class="c-icon__symbol" id="Back_icon_white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <Title>Back</Title>
+                    <path id="Path_114" data-name="Path 114" d="M0,0H24V24H0Z" fill="none"/>
+                    <path id="Path_115" data-name="Path 115" d="M20,11H7.83l5.59-5.59L12,4,4,12l8,8,1.41-1.41L7.83,13H20Z" fill="#fff"/>
+                  </svg>  
+                </h1>
+              </li>
+              <li class="c-nav__item"><a class="c-nav__link" href="index.html">Home</a></li>
+              <li class="c-nav__item"><a class="c-nav__link" href="information_page.html">Information</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-ppopup-on__background js-nav-back"></div>
+    </nav>
+
+    <div class="c-header__dropback u-background-green u-rounded-lg"></div>
+
+    <div class="o-row c-header">
+      <div class="o-container u-max-width-xl">
+        <header class="c-header__context">
+          
+          <div class="o-content--flex-start">
+            <h1 class="c-icon c-icon-xs c-header__nav-icon js-nav-btn">
+              <svg class="c-icon__symbol"
+              id="Nav_icon_white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <Title>Navigation</Title>
+                <path id="Path_112" data-name="Path 112" d="M2,15.5v2H22v-2Zm0-5v2H22v-2Zm0-5v2H22v-2Z" fill="#fff"/>
+                <path id="Path_113" data-name="Path 113" d="M0,0H24V24H0Z" fill="none"/>
+              </svg>
+            </h1>
+  
+            <h1 class="c-header__title">Little Garden</h1>
+          </div>
+        </header>
+      </div>
+    </div>
+
+        <!--====================================================================================================================================-->
+
+    <div class="o-row">
+      <div class="o-container u-max-width-xl">
+        <p class="js-date c-lead">
+          Saturday - 16 May 2020
+        </p>
+
+        <!--====================================================================================================================================-->
+
+        <section class="o-section o-layout o-layout--gutter o-layout--gutter-col o-layout--justify-center o-layout--align-center">
+          <!---------------------------------------------------------------------------------------------------------->
+          <div class="o-layout__item u-1-of-2-bp2 js-measure js-measure--water" data-measureType="water"> <!---------TYPE-------->
+            <section class="u-box-shadow u-rounded-sm u-background-white">
+              <div class="o-content--relative o-content-padding-lg">
+
+                <div class="o-layout o-layout--justify-space-between o-layout--align-center">
+
+                  <h2 class="o-layout__item u-1-of-2 js-measure__title">Water Level</h2>
+                  <h2 class="o-layout__item u-1-of-2 u-text--align-right c-status js-actuator-title">WATER PUMP</h2>
+
+                </div>
+                <!--------------------------------------------------------------------------------------->
+                <div class="o-layout o-layout--justify-space-between o-layout--align-center">
+
+                  <div class="o-layout o-layout--justify-start o-layout--align-center">
+                    <h2 class="c-icon c-icon-sm c-icon--margin">
+                      <svg class="c-icon__symbol"      
+                      id="Icon_Water_Big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                        <g id="Circle" fill="none" stroke="#5d8b4c" stroke-width="5">
+                          <circle cx="20" cy="20" r="20" stroke="none"/>
+                          <circle cx="20" cy="20" r="17.5" fill="none"/>
+                        </g>
+                        <g id="Water_icon" transform="translate(8 8)">
+                          <path id="Path_124" data-name="Path 124" d="M24,0H0V24H24Z" fill="none"/>
+                          <path id="Path_125" data-name="Path 125" d="M17.66,7.93,12,2.27,6.34,7.93a8,8,0,1,0,11.32,0ZM12,19.59A6,6,0,0,1,7.76,9.35L12,5.1Z"/>
+                        </g>
+                      </svg>    
+                    </h2>
+  
+                    <h2 class="js-measure__value c-measure__value">57</h2>
+                    <h2 class="js-unit">%</h2>
+                  </div>
+
+                  <label class="o-layout--align-self-start c-switch">
+                    <input class="c-checkbox js-actuator-btn" type="checkbox">
+                    <span class="c-slider c-slider--round"></span>
+                  </label>
+                </div>
+                <!--------------------------------------------------------------------------------------->
+                <a class="c-button c-nav-button js-detail-btn" href="detail_page.html?measureType=water" data-measureType="water"> <!---------TYPE-------->
+                  <div class="c-button__content o-layout o-layout--justify-start o-layout--align-center">
+
+                    <div class="c-icon c-icon-xs c-button__element">
+                      <svg class="c-icon__symbol"
+                      id="Search_icon_white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path id="Path_144" data-name="Path 144" d="M0,0H24V24H0Z" fill="none"/>
+                        <path id="Path_145" data-name="Path 145" d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z" fill="#fff"/>
+                      </svg> 
+                    </div>
+
+                    <p class="c-button__element">Details</p>
+                  </div>
+                </a>
+                <!--------------------------------------------------------------------------------------->
+              </div>
+            </section>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------->
+          <div class="o-layout__item u-1-of-2-bp2 js-measure js-measure--light" data-measureType="light"> <!---------TYPE-------->
+            <section class="u-box-shadow u-rounded-sm u-background-white">
+              <div class="o-content--relative o-content-padding-lg">
+
+                <div class="o-layout o-layout--justify-start o-layout--align-center">
+
+                  <h2 class="o-layout__item u-1-of-2 js-measure__title">Brightness</h2>
+                  <h2 class="o-layout__item u-1-of-2 u-text--align-right c-status js-actuator-title">LED STRIP</h2>
+
+                </div>
+                <!--------------------------------------------------------------------------------------->
+                <div class="o-layout o-layout--justify-space-between o-layout--align-center">
+
+                  <div class="o-layout o-layout--justify-start o-layout--align-center">
+                    <h2 class="c-icon c-icon-sm c-icon--margin">
+                      <svg class="c-icon__symbol"
+                      id="Icon_Brightness_Big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                        <g id="Circle" fill="none" stroke="#5d8b4c" stroke-width="5">
+                          <circle cx="20" cy="20" r="20" stroke="none"/>
+                          <circle cx="20" cy="20" r="17.5" fill="none"/>
+                        </g>
+                        <g id="Light_icon" transform="translate(8 8)">
+                          <path id="Path_120" data-name="Path 120" d="M0,0H24V24H0Z" fill="none"/>
+                          <path id="Path_121" data-name="Path 121" d="M20,15.31,23.31,12,20,8.69V4H15.31L12,.69,8.69,4H4V8.69L.69,12,4,15.31V20H8.69L12,23.31,15.31,20H20V15.31ZM12,18a6,6,0,1,1,6-6A6,6,0,0,1,12,18Z" transform="translate(0 0)"/>
+                        </g>
+                      </svg>           
+                    </h2>
+  
+                    <h2 class="js-measure__value c-measure__value">12407.1</h2>
+                    <h2 class="js-unit">lux</h2>
+                  </div>
+
+                  <label class="o-layout--align-self-start c-switch">
+                    <input class="c-checkbox js-actuator-btn" type="checkbox">
+                    <span class="c-slider c-slider--round"></span>
+                  </label>
+                </div>
+                <!--------------------------------------------------------------------------------------->
+                <a class="c-button c-nav-button js-detail-btn" href="detail_page.html?measureType=light"  data-measureType="light"> <!---------TYPE-------->
+                  <div class="c-button__content o-layout o-layout--justify-start o-layout--align-center">
+
+                    <div class="c-icon c-icon-xs c-button__element">
+                      <svg class="c-icon__symbol"
+                      id="Search_icon_white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path id="Path_144" data-name="Path 144" d="M0,0H24V24H0Z" fill="none"/>
+                        <path id="Path_145" data-name="Path 145" d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z" fill="#fff"/>
+                      </svg> 
+                    </div>
+
+                    <p class="c-button__element">Details</p>
+                  </div>
+                </a>
+                <!--------------------------------------------------------------------------------------->
+              </div>
+            </section>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------->
+          <div class="o-layout__item u-1-of-2-bp2 js-measure js-measure--humid" data-measureType="humid"> <!---------TYPE-------->
+            <section class="u-box-shadow u-rounded-sm u-background-white">
+              <div class="o-content--relative o-content-padding-lg">
+
+                <div class="o-layout o-layout--justify-start o-layout--align-center">
+                  <h2 class="o-layout__item u-1-of-2 js-measure__title">Humidity</h2>
+                </div>
+                <!--------------------------------------------------------------------------------------->
+                <div class="o-layout o-layout--justify-space-between o-layout--align-center">
+
+                  <div class="o-layout o-layout--justify-start o-layout--align-center">
+                    <h2 class="c-icon c-icon-sm c-icon--margin">
+                      <svg class="c-icon__symbol"
+                      id="Icon_Humidity_Big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                        <g id="Circle" fill="none" stroke="#5d8b4c" stroke-width="5">
+                          <circle cx="20" cy="20" r="20" stroke="none"/>
+                          <circle cx="20" cy="20" r="17.5" fill="none"/>
+                        </g>
+                        <g id="Moisture_icon" transform="translate(8 8)">
+                          <path id="Path_122" data-name="Path 122" d="M0,0H24V24H0Z" fill="none"/>
+                          <path id="Path_123" data-name="Path 123" d="M19.35,10.04a7.492,7.492,0,0,0-14-2A6,6,0,0,0,6,20H19a4.986,4.986,0,0,0,.35-9.96Z"/>
+                        </g>
+                      </svg>          
+                    </h2>
+  
+                    <h2 class="js-measure__value c-measure__value">57</h2>
+                    <h2 class="js-unit">%</h2>
+                  </div>
+                </div>
+                <!--------------------------------------------------------------------------------------->
+                <a class="c-button c-nav-button js-detail-btn" href="detail_page.html?measureType=humid" data-measureType="humid"> <!---------TYPE-------->
+                  <div class="c-button__content o-layout o-layout--justify-start o-layout--align-center">
+
+                    <div class="c-icon c-icon-xs c-button__element">
+                      <svg class="c-icon__symbol"
+                      id="Search_icon_white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path id="Path_144" data-name="Path 144" d="M0,0H24V24H0Z" fill="none"/>
+                        <path id="Path_145" data-name="Path 145" d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z" fill="#fff"/>
+                      </svg> 
+                    </div>
+
+                    <p class="c-button__element">Details</p>
+                  </div>
+                </a>
+                <!--------------------------------------------------------------------------------------->
+              </div>
+            </section>
+          </div>
+          <!---------------------------------------------------------------------------------------------------------->
+          <div class="o-layout__item u-1-of-2-bp2 js-measure js-measure--temp" data-measureType="temp"> <!---------TYPE-------->
+            <section class="u-box-shadow u-rounded-sm u-background-white">
+              <div class="o-content--relative o-content-padding-lg">
+
+                <div class="o-layout o-layout--justify-start o-layout--align-center">
+                  <h2 class="o-layout__item u-1-of-2 js-measure__title">Temperature</h2>
+                </div>
+                <!--------------------------------------------------------------------------------------->
+                <div class="o-layout o-layout--justify-space-between o-layout--align-center">
+
+                  <div class="o-layout o-layout--justify-start o-layout--align-center">
+                    <h2 class="c-icon c-icon-sm c-icon--margin">
+                      <svg class="c-icon__symbol" 
+                      id="Icon_Temperature_Big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                        <g id="Circle" fill="none" stroke="#5d8b4c" stroke-width="5">
+                          <circle cx="20" cy="20" r="20" stroke="none"/>
+                          <circle cx="20" cy="20" r="17.5" fill="none"/>
+                        </g>
+                        <g id="thermometer" transform="translate(8 8)">
+                          <path id="Path_134" data-name="Path 134" d="M0,0H24V24H0Z" fill="none"/>
+                          <g id="thermometer-2" data-name="thermometer" transform="translate(2 -3)">
+                            <path id="Path_136" data-name="Path 136" d="M15,13V5A3,3,0,0,0,9,5v8a5,5,0,1,0,6,0M12,4a1,1,0,0,1,1,1V8H11V5A1,1,0,0,1,12,4Z" transform="translate(-2 3)" fill="#1a2615"/>
+                          </g>
+                        </g>
+                      </svg>         
+                    </h2>
+                    
+                    <h2 class="js-measure__value c-measure__value">24.7</h2>
+                    <h2 class="js-unit">°C</h2>
+                  </div>
+                </div>
+                <!--------------------------------------------------------------------------------------->
+                <a class="c-button c-nav-button js-detail-btn" href="detail_page.html?measureType=temp" data-measureType="temp"> <!---------TYPE-------->
+                  <div class="c-button__content o-layout o-layout--justify-start o-layout--align-center">
+
+                    <div class="c-icon c-icon-xs c-button__element">
+                      <svg class="c-icon__symbol"
+                      id="Search_icon_white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path id="Path_144" data-name="Path 144" d="M0,0H24V24H0Z" fill="none"/>
+                        <path id="Path_145" data-name="Path 145" d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z" fill="#fff"/>
+                      </svg> 
+                    </div>
+
+                    <p class="c-button__element">Details</p>
+                  </div>
+                </a>
+                <!--------------------------------------------------------------------------------------->
+              </div>
+            </section>
+          </div>
+        </section>
+          <!---------------------------------------------------------------------------------------------------------->
+        <section class="o-section-lg">
+          <div class="o-content--flex-center">
+            <a class="c-button js-measure-btn">
+              <div class="c-button__content-lg o-layout o-layout--justify-start o-layout--align-center">
+  
+                <div class="c-icon c-icon-sm c-button__element">
+                  <svg class="c-icon__symbol"
+                  id="Renew_icon_white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>New measurement</title>
+                    <path id="Path_146" data-name="Path 146" d="M0,0H24V24H0Z" fill="none"/>
+                    <path id="Path_147" data-name="Path 147" d="M12,6V9l4-4L12,1V4A7.986,7.986,0,0,0,5.24,16.26L6.7,14.8A5.87,5.87,0,0,1,6,12,6,6,0,0,1,12,6Zm6.76,1.74L17.3,9.2A5.99,5.99,0,0,1,12,18V15L8,19l4,4V20A7.986,7.986,0,0,0,18.76,7.74Z" fill="#fff"/>
+                  </svg>
+                </div>
+  
+                <h2 class="c-button__element">Measure</h2>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!--====================================================================================================================================-->
+
+      </div>
+    </div>
+
+
+  </body>
+</html>

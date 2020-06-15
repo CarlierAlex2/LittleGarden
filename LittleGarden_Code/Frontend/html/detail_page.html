@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Little Garden - Detail page</title>
+
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/screen.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+  <body>
+    
+    <!--====================================================================================================================================-->
+
+    <div class="c-ppopup-off js-settings">
+      <div class="o-row">
+        <div class="o-container u-max-width-xl">
+          <div class="o-content--flex-center">
+            <form class="u-box-shadow u-rounded-sm u-background-white c-settings">
+              <div class="c-settings__content o-content--relative o-content-padding-lg">
+                <div class="o-layout o-layout--gutter-col-sm o-layout--justify-center o-layout--align-center">
+                  <h2 class="o-layout__item js-settings_title u-text--align-center">Settings</h2>
+        
+                  <div class="o-layout__item u-1-of-2">
+                    <div class="o-container u-max-width-80">
+                      <label class="u-fill-width js-setting-unit-min u-text--align-center" for="settingMin">Min</label>
+                      <input class="c-input u-background-grey u-fill-width js-setting-min u-max-width-100" type="number" name="settingMin" id="settingMin" min="0" max="100000" data-settingType="min"/>
+                    </div>
+                  </div>
+  
+                  <div class="o-layout__item u-1-of-2">
+                    <div class="o-container u-max-width-80">
+                      <label class="u-fill-width js-setting-unit-max u-text--align-center" for="settingMax">Max</label>
+                      <input class="c-input u-background-grey u-fill-width js-setting-max u-max-width-100" type="number" name="settingMax" id="settingMax" min="0" max="100000" data-settingType="max"/>
+                    </div>
+                  </div>
+  
+                  <div class="o-layout__item u-max-width-80">
+                    <p class="u-text--align-center u-text--color-grey">
+                      In this window you can view and change the settings for the chosen type of measurement.
+                    </p>
+                  </div>
+  
+                  <div class="o-layout__item u-1-of-2">
+                    <input type="button" class="u-fill-width u-max-width-80 c-button c-button__content-xl js-setting-cancel-btn" value="Cancel"/>
+                  </div>
+  
+                  <div class="o-layout__item u-1-of-2">
+                    <input type="submit" class="u-fill-width u-max-width-80 c-button c-button__content-xl js-setting-confirm-btn" value="Confirm"/>
+                  </div>
+  
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-ppopup-on__background"></div>
+    </div>
+
+    <!--====================================================================================================================================-->
+
+    <div class="c-header__dropback u-background-green u-rounded-lg">
+    </div>
+
+    <div class="o-row c-header">
+      <div class="o-container u-max-width-xl">
+        <header class="c-header__context">
+          <div class="o-content--flex-start">
+            <h1 class="c-icon c-icon-xs c-header__nav-icon js-back-btn">
+              <svg class="c-icon__symbol"
+              id="Back_icon_white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path id="Path_114" data-name="Path 114" d="M0,0H24V24H0Z" fill="none"/>
+                <path id="Path_115" data-name="Path 115" d="M20,11H7.83l5.59-5.59L12,4,4,12l8,8,1.41-1.41L7.83,13H20Z" fill="#fff"/>
+              </svg>
+            </h1>
+  
+            <h1 class="c-header__title js-header__title">Brightness</h1>
+          </div>
+          <h1 class="c-icon c-icon-xs js-settings-btn">
+            <svg class="c-icon__symbol"
+            id="Setting_icon_white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path id="Path_134" data-name="Path 134" d="M0,0H24V24H0Z" fill="none"/>
+              <path id="Path_135" data-name="Path 135" d="M19.14,12.94A7.074,7.074,0,0,0,19.2,12a5.777,5.777,0,0,0-.07-.94l2.03-1.58a.491.491,0,0,0,.12-.61L19.36,5.55a.488.488,0,0,0-.59-.22l-2.39.96a7.064,7.064,0,0,0-1.62-.94L14.4,2.81a.484.484,0,0,0-.48-.41H10.08a.474.474,0,0,0-.47.41L9.25,5.35a7.22,7.22,0,0,0-1.62.94L5.24,5.33a.477.477,0,0,0-.59.22L2.74,8.87a.455.455,0,0,0,.12.61l2.03,1.58a5.563,5.563,0,0,0-.02,1.88L2.84,14.52a.491.491,0,0,0-.12.61l1.92,3.32a.488.488,0,0,0,.59.22l2.39-.96a7.064,7.064,0,0,0,1.62.94l.36,2.54a.492.492,0,0,0,.48.41h3.84a.466.466,0,0,0,.47-.41l.36-2.54a6.859,6.859,0,0,0,1.62-.94l2.39.96a.477.477,0,0,0,.59-.22l1.92-3.32a.463.463,0,0,0-.12-.61ZM12,15.6A3.6,3.6,0,1,1,15.6,12,3.611,3.611,0,0,1,12,15.6Z" fill="#fff"/>
+            </svg>
+          </h1>
+        </header>
+      </div>
+    </div>
+
+    <!--====================================================================================================================================-->
+
+    <div class="o-row">
+      <div class="o-container u-max-width-lg">
+
+        <section class="o-section-lg">
+          <section class="u-box-shadow u-rounded-sm u-background-white">
+            <div class="o-content--relative o-content-padding o-content-padding-lg-bp1 o-content-padding-xl-bp2">
+              <div min-height="300"  class="c-part--white js-chart-holder">
+                <canvas id="myChart" class="c-chart js-chart u-fill"></canvas>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="o-section-lg">
+          <div class="o-container u-max-width-md">
+            <h2 class="u-background-dark-green">Period</h2>
+            <form class="c-form js-period">
+              <div class="o-content--flex-space-evenly">
+                <div>
+                  <div class="o-layout o-layout-column o-layout--gutter-col-xs o-layout--justify-center o-layout--align-center">
+                    <div class="o-layout__item">
+                      <label class="c-input-label u-fill-width u-text--align-center" for="dateStart">From</label>
+                      <input class="c-input u-max-width-144px u-max-width-176px-bp2 u-text--color-grey" type="date" name="dateStart" id="dateStart" />
+                    </div>
+        
+                    <div class="o-layout__item">
+                      <input class="c-input u-max-width-144px u-max-width-176px-bp2 u-text--color-grey" type="time" name="timeStart" id="timeStart" />
+                    </div>
+                  </div>
+                </div>
+  
+                <h1 class="c-input__seperator">_</h1>
+  
+                <div>
+                  <div class="o-layout o-layout-column o-layout--gutter-col-xs o-layout--justify-center o-layout--align-center">
+                    <div class="o-layout__item">
+                      <label class="c-input-label u-fill-width u-text--align-center" for="dateEnd">Until</label>
+                      <input class="c-input u-max-width-144px u-max-width-176px-bp2 u-text--color-grey" type="date" name="dateEnd" id="dateEnd" />
+                    </div>
+        
+                    <div class="o-layout__item">
+                      <input class="c-input u-max-width-144px u-max-width-176px-bp2 u-text--color-grey" type="time" name="timeEnd" id="timeEnd" />
+                    </div>
+                  </div>
+                </div>
+  
+              </div>
+            </form>
+          </div>
+        </section>
+    
+        <section class="o-section-lg">
+          <div class="o-container u-max-width-md">
+
+            <h2 class="u-background-dark-green">Measurements</h2>
+          
+            <div class="js-measure-list">
+              <h2>10 May 2020</h2>
+      
+              <section class="o-section u-box-shadow u-rounded-sm u-background-white">
+                <div class="o-content--relative o-content-padding-lg u-margin-negative-16">
+  
+                  <div class="o-layout o-layout--justify-space-between o-layout--align-center">
+                    <div class="o-layout__item u-1-of-2">
+                      <div class="o-layout o-layout--gutter-sm o-layout--justify-start o-layout--align-center">
+                        <h1 class="c-icon c-icon-xs c-icon--margin ">
+                          <svg class="c-icon__symbol"
+                          id="Light_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <title>Measure Icon</title>
+                            <path id="Path_120" data-name="Path 120" d="M0,0H24V24H0Z" fill="none"/>
+                            <path id="Path_121" data-name="Path 121" d="M20,15.31,23.31,12,20,8.69V4H15.31L12,.69,8.69,4H4V8.69L.69,12,4,15.31V20H8.69L12,23.31,15.31,20H20V15.31ZM12,18a6,6,0,1,1,6-6A6,6,0,0,1,12,18Z"/>
+                          </svg>
+                        </h1>
+                        <p class="u-text--color-grey">1:30 PM</p>
+                      </div>
+                    </div>
+  
+                    <div class="o-layout__item u-1-of-2">
+                      <div class="o-layout o-layout--gutter-sm o-layout--justify-start o-layout--align-center">
+                        <div class="o-layout__item u-2-of-5"><p class="u-text--align-right">1044.9</p></div>
+                        <p class="o-layout__item u-1-of-4 ">lux</p>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="o-layout o-layout--justify-center o-layout--align-center">
+                    <p class="u-text-align-center">Commentaar: test</p>
+                  </div>
+                </div>
+              </section>
+  
+            </div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+  </body>
+</html>

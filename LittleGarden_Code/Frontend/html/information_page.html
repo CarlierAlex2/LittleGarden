@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Little Garden - Detail page</title>
+    
+    <link rel="stylesheet" href="style/normalize.css">
+    <link rel="stylesheet" href="style/screen.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body>
+
+    <nav class="c-nav c-ppopup-off js-nav">
+      <div class="c-nav__background">
+        <div class="o-row c-ppopup-on__content">
+          <div class="o-container u-max-width-xl">
+            <ul class="o-list c-nav__list">
+              <li class="c-nav__item c-nav__back-btn js-nav-back">
+                <h1 class="c-icon c-icon-xs c-icon--no-margin">
+                  <svg class="c-icon__symbol" id="Back_icon_white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <Title>Back</Title>
+                    <path id="Path_114" data-name="Path 114" d="M0,0H24V24H0Z" fill="none"/>
+                    <path id="Path_115" data-name="Path 115" d="M20,11H7.83l5.59-5.59L12,4,4,12l8,8,1.41-1.41L7.83,13H20Z" fill="#fff"/>
+                  </svg>  
+                </h1>
+              </li>
+              <li class="c-nav__item"><a class="c-nav__link" href="index.html">Home</a></li>
+              <li class="c-nav__item"><a class="c-nav__link" href="information_page.html">Information</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-ppopup-on__background js-nav-back"></div>
+    </nav>
+
+    <div class="c-header-dropback u-background-green u-rounded-lg">
+    </div>
+
+    <div class="o-row c-header">
+      <div class="o-container u-max-width-xl">
+        <header class="c-header__context">
+          
+          <div class="o-content--flex-start">
+            <h1 class="c-icon c-icon-xs c-header__nav-icon js-nav-btn">
+              <svg class="c-icon__symbol"
+              id="Nav_icon_white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <Title>Navigation</Title>
+                <path id="Path_112" data-name="Path 112" d="M2,15.5v2H22v-2Zm0-5v2H22v-2Zm0-5v2H22v-2Z" fill="#fff"/>
+                <path id="Path_113" data-name="Path 113" d="M0,0H24V24H0Z" fill="none"/>
+              </svg>
+            </h1>
+  
+            <h1 class="c-header__title">Information</h1>
+          </div>
+        </header>
+      </div>
+    </div>
+
+    <!--====================================================================================================================================-->
+
+    <div class="o-row">
+      <div class="o-container u-max-width-md">
+        <section class="u-box-shadow u-rounded-sm u-background-white">
+          <div class="c-tab__text">
+            <section class="o-section-lg">
+              <h2>Developer</h2>
+              <p>Alex Carlier</p>
+            </section>
+
+            <section class="o-section-lg">
+              <h2>IP address device</h2>
+              <p class="js-ip_address">8.8.8.8</p>
+            </section>
+
+            <section class="o-section-lg">
+              <h2>E-Mail</h2>
+              <p><a href="alex.carlier@student.howest.be">alex.carlier@student.howest.be</a>></p>
+            </section>
+
+            <section class="o-section-lg">
+              <h2>Instructable</h2>
+              <p><a href="https://www.instructables.com/">https://www.instructables.com/</a>></p>
+            </section>
+          </div>
+        </section>
+      </div>
+    </div>
+    
+  </body>
+</html>

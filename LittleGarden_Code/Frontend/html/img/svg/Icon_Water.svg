@@ -1,0 +1,10 @@
+<svg id="Icon_Water_Big" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Circle" fill="none" stroke="#5d8b4c" stroke-width="5">
+    <circle cx="20" cy="20" r="20" stroke="none"/>
+    <circle cx="20" cy="20" r="17.5" fill="none"/>
+  </g>
+  <g id="Water_icon" transform="translate(8 8)">
+    <path id="Path_124" data-name="Path 124" d="M24,0H0V24H24Z" fill="none"/>
+    <path id="Path_125" data-name="Path 125" d="M17.66,7.93,12,2.27,6.34,7.93a8,8,0,1,0,11.32,0ZM12,19.59A6,6,0,0,1,7.76,9.35L12,5.1Z"/>
+  </g>
+</svg>

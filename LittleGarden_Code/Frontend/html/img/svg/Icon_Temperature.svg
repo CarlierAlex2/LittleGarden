@@ -1,0 +1,12 @@
+<svg id="Icon_Temperature_Big" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Circle" fill="none" stroke="#5d8b4c" stroke-width="5">
+    <circle cx="20" cy="20" r="20" stroke="none"/>
+    <circle cx="20" cy="20" r="17.5" fill="none"/>
+  </g>
+  <g id="thermometer" transform="translate(8 8)">
+    <path id="Path_134" data-name="Path 134" d="M0,0H24V24H0Z" fill="none"/>
+    <g id="thermometer-2" data-name="thermometer" transform="translate(2 -3)">
+      <path id="Path_136" data-name="Path 136" d="M15,13V5A3,3,0,0,0,9,5v8a5,5,0,1,0,6,0M12,4a1,1,0,0,1,1,1V8H11V5A1,1,0,0,1,12,4Z" transform="translate(-2 3)" fill="#1a2615"/>
+    </g>
+  </g>
+</svg>
