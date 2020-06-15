@@ -26,21 +26,28 @@ class MeasureHelper:
         licht_json = {"type" : "light", "waarde" : 0, "commentaar" : commentaar}
         #return licht_json
 
-        light_value = None
-        for i in range(0,100):
+        try:
+            light_value = None
+            for i in range(0,100):
+                if(light_value is None):
+                    light_value = self.bh1750.read_light()
+                if(light_value is not None and light_value is not 0):
+                    break
+                time.sleep(0.1)
+
+            commentaar = ""
             if(light_value is None):
-                light_value = self.bh1750.read_light()
-            if(light_value is not None and light_value is not 0):
-                break
-            time.sleep(0.1)
+                commentaar = "Error: No measurement was available"
+                light_value = 0
 
-        commentaar = ""
-        if(light_value is None):
-            commentaar = "Error: No measurement was available"
-            light_value = 0
+            print(f"Licht waarde = {light_value} lux")
+            licht_json = {"type" : "light", "waarde" : light_value, "commentaar" : commentaar}
+            return licht_json
+        except ValueError:
+            print("ERROR: NO measurement taken")
 
-        print(f"Licht waarde = {light_value} lux")
-        licht_json = {"type" : "light", "waarde" : light_value, "commentaar" : commentaar}
+        commentaar = "ERROR: NO measurement taken"
+        licht_json = {"type" : "light", "waarde" : 0, "commentaar" : commentaar}
         return licht_json
 
 
@@ -52,33 +59,45 @@ class MeasureHelper:
         dht11_json = [humid_json, temp_json]
         #return dht11_json
 
-        dht11_waardes = None
-        for i in range(0,100):
-            if(dht11_waardes is None):
-                dht11_waardes = self.dht11.read_humidity_and_temp()
-            if(dht11_waardes is not None):
-                break
-            time.sleep(0.1)
+        try:
+            light_value = None
+            dht11_waardes = None
+            for i in range(0,100):
+                if(dht11_waardes is None):
+                    dht11_waardes = self.dht11.read_humidity_and_temp()
+                if(dht11_waardes is not None):
+                    break
+                time.sleep(0.1)
 
-        commentaar = "Error: No measurement was available"
+            commentaar = "Error: No measurement was available"
+            humid_json = {"type" : "humid", "waarde" : 0, "commentaar" : commentaar}
+            temp_json = {"type" : "temp", "waarde" : 0, "commentaar" : commentaar}
+        
+            if dht11_waardes is not None:
+                humid_value = dht11_waardes[0]
+                commentaar = ""
+                print(f"Humid waarde = {humid_value} %")
+                humid_json = {"type" : "humid", "waarde" : humid_value, "commentaar" : commentaar}
+
+
+                temp_value = dht11_waardes[1]
+                commentaar = ""
+                print(f"Temp waarde = {temp_value} *C")
+                temp_json = {"type" : "temp", "waarde" : temp_value, "commentaar" : commentaar}
+
+
+            dht11_json = [humid_json, temp_json]
+            return dht11_json
+        except ValueError:
+            print("ERROR: NO measurement taken")
+
+        commentaar = "ERROR: NO measurement taken"
         humid_json = {"type" : "humid", "waarde" : 0, "commentaar" : commentaar}
         temp_json = {"type" : "temp", "waarde" : 0, "commentaar" : commentaar}
-    
-        if dht11_waardes is not None:
-            humid_value = dht11_waardes[0]
-            commentaar = ""
-            print(f"Humid waarde = {humid_value} %")
-            humid_json = {"type" : "humid", "waarde" : humid_value, "commentaar" : commentaar}
-
-
-            temp_value = dht11_waardes[1]
-            commentaar = ""
-            print(f"Temp waarde = {temp_value} *C")
-            temp_json = {"type" : "temp", "waarde" : temp_value, "commentaar" : commentaar}
-
-
         dht11_json = [humid_json, temp_json]
         return dht11_json
+
+
 
 
 
@@ -88,26 +107,35 @@ class MeasureHelper:
         water_json =  {"type" : "water", "waarde" : 0, "commentaar" : commentaar}
         #return water_json
 
-        water_value = None
-        count = 0
-        for i in range(0,100):
+        try:
+            water_value = None
+            count = 0
+            for i in range(0,100):
+                if(water_value is None):
+                    water_value = self.soil_sensor.read_soilwater_percentage()
+                    count += 1
+                    if(count < 3):
+                        water_value = None
+                if(water_value is not None and water_value is not 0):
+                    break
+                time.sleep(0.1)
+
+            commentaar = ""
             if(water_value is None):
-                water_value = self.soil_sensor.read_soilwater_percentage()
-                count += 1
-                if(count < 3):
-                    water_value = None
-            if(water_value is not None and water_value is not 0):
-                break
-            time.sleep(0.1)
+                commentaar = "ERROR: NO measurement taken"
+                water_value = 0
 
-        commentaar = ""
-        if(water_value is None):
-            commentaar = "Error: No measurement was available"
-            water_value = 0
+            print(f"Water waarde = {water_value} ")
+            water_json = {"type" : "water", "waarde" : water_value, "commentaar" : commentaar}
+            return water_json
+        except ValueError:
+            print("ERROR: NO measurement taken")
 
-        print(f"Water waarde = {water_value} ")
-        water_json = {"type" : "water", "waarde" : water_value, "commentaar" : commentaar}
+        commentaar = "ERROR: NO measurement taken"
+        water_json =  {"type" : "water", "waarde" : 0, "commentaar" : commentaar}
         return water_json
+
+
 
 
     def read_sensor(self, measureType):

@@ -170,7 +170,7 @@ hr {
 }
 
 a {
-    color: #FFFFFF;
+    color: #17181A;
     transition: all .1s ease-in-out;
     text-decoration: none;
 
@@ -181,13 +181,14 @@ a {
 
 a:visited,
 a:active {
-    color: #FFFFFF;
+    color: #686F73;
 }
 
 a:hover,
 a:focus {
-    color: #FFFFFF;
+    color: #278006;
 }
+
 
 /*------------------------------------*\
   #OBJECTS
@@ -681,7 +682,7 @@ a:focus {
 .c-nav__link,
 .c-nav__link:visited,
 .c-nav__link:active {
-    color: #fff;
+    color: #FFFFFF;
 }
 
 .c-nav__link:hover,
@@ -769,9 +770,20 @@ a:focus {
 }
 
 .c-button__element{
+    color: #FFFFFF;
     display: inline-block;
     padding: 0;
     margin: 0;
+}
+
+.c-button__element:visited,
+.c-button__element:active {
+    color: #FFFFFF;
+}
+
+.c-button__element:hover,
+.c-button__element:focus {
+    color: #FFFFFF;
 }
 
 /*
@@ -1385,6 +1397,9 @@ a:focus {
     color: #2C4023;
 }
 
+.u-text--word-wrap-break{
+    word-wrap: break-word;
+}
 
 /*
     Utility: Decoration

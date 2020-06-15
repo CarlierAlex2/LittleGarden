@@ -441,6 +441,7 @@ def toggle_actuator(measureType, value, isForced = False):
     print("")
     print(f"SETTINGS - {measureType} COMPARE value {value} with range {settingMin} - {settingMax}")
 
+    wasActive = actionHelper.is_actuator_active(measureType)
     if value >= settingMax:
         print(f"{measureType} MAXIMUM REACHED")
         toggled = set_actuator(measureType, 0)
@@ -468,16 +469,20 @@ def toggle_actuator(measureType, value, isForced = False):
 def set_actuator(measureType, status, message = "automatic"):
     print(f"set_actuator - {status}")
     if measureType is not None and status is not None:
+        #get data
         status = actionHelper.set_active(measureType, status)
         now = datetime.now()
         date = str(now.strftime("%Y-%m-%d %H:%M:%S"))
         comment = message
         deviceId = DeviceHelper.get_actuator_for_measureType(measureType)
         #print(f"Actuator measure - device ID - {device6Id}")
+
+        #check state
         isActive = 0
         if(status == True):
             isActive = 1
 
+        #add do database
         nieuwId = DataRepository.create_meting(deviceId, isActive, comment, date)
         print("")
         print(f"Actuator measure")

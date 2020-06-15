@@ -256,7 +256,7 @@ const showIpAddress = function(jsonObject){
   let htmlObject = '';
   for(const ip of ip_array)
   {
-    htmlObject += `<p>${ip}</p>`;
+    htmlObject += `<p class="u-text--word-wrap-break">${ip}</p>`;
   }
   html_ip.innerHTML = htmlObject;
 };
